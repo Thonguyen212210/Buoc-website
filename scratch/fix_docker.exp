@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set password "u2W77u6k53"
+set ip "66.154.110.53"
+
+spawn ssh -o StrictHostKeyChecking=no root@$ip {
+    echo "Stopping and removing conflicting container..."
+    docker stop buoc_app || true
+    docker rm -f buoc_app || true
+    echo "Starting container again..."
+    cd /var/www/buoc
+    docker compose up -d
+}
+expect {
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}

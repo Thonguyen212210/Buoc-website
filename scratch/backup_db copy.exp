@@ -1,0 +1,51 @@
+#!/usr/bin/expect -f
+
+# Set timeout for commands
+set timeout 30
+set password "u2W77u6k53"
+set ip "66.154.110.53"
+set local_dest [lindex $argv 0]
+
+if {$local_dest == ""} {
+    puts "Error: Please specify the local destination directory."
+    exit 1
+}
+
+# Step 1: Create backup inside container and copy to VPS host temp file
+puts "\n(1/3) 📦 Creating database backup archive on VPS..."
+spawn ssh -o StrictHostKeyChecking=no root@$ip {
+    docker exec buoc_app tar -czf /tmp/db_backup.tar.gz -C /app/server/data .
+    docker cp buoc_app:/tmp/db_backup.tar.gz /var/www/buoc/db_backup.tar.gz
+    docker exec buoc_app rm /tmp/db_backup.tar.gz
+}
+expect {
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}
+
+# Step 2: Download backup to local machine
+puts "\n(2/3) 📥 Downloading backup archive to local machine..."
+spawn scp -o StrictHostKeyChecking=no root@$ip:/var/www/buoc/db_backup.tar.gz "$local_dest/db_backup.tar.gz"
+expect {
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}
+
+# Step 3: Clean up backup archive on VPS host
+puts "\n(3/3) 🧹 Cleaning up temporary files on VPS..."
+spawn ssh -o StrictHostKeyChecking=no root@$ip "rm -f /var/www/buoc/db_backup.tar.gz"
+expect {
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}
+
+puts "\n✅ Backup download process completed."

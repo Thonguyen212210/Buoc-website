@@ -1,0 +1,18 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Corner radii" subtitle="Soft & friendly — 6px → pill" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>
+ body{margin:0;font-family:var(--font-body);background:var(--surface-card);padding:20px;}
+ .row{display:flex;gap:16px;align-items:flex-end;}
+ .b{width:84px;height:84px;background:var(--purple-100);border:1.5px solid var(--purple-300);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box;font-size:11px;font-weight:600;color:var(--purple-700);}
+ .pill{width:120px;border-radius:var(--radius-pill);}
+</style></head><body>
+<div class="row">
+ <div class="b" style="border-radius:var(--radius-xs)">xs 6</div>
+ <div class="b" style="border-radius:var(--radius-sm)">sm 10</div>
+ <div class="b" style="border-radius:var(--radius-md)">md 16</div>
+ <div class="b" style="border-radius:var(--radius-lg)">lg 24</div>
+ <div class="b" style="border-radius:var(--radius-xl)">xl 32</div>
+ <div class="b pill">pill</div>
+</div>
+</body></html>

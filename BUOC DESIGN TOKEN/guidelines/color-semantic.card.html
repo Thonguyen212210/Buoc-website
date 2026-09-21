@@ -1,0 +1,17 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Semantic colors" subtitle="Success, warning, error, info + soft pairs" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>
+ body{margin:0;font-family:var(--font-body);background:var(--surface-card);padding:18px;}
+ .row{display:flex;gap:14px;}
+ .chip{flex:1;border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-xs);}
+ .top{height:54px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;}
+ .bot{height:34px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;}
+</style></head><body>
+<div class="row">
+ <div class="chip"><div class="top" style="background:var(--success)">Thành công</div><div class="bot" style="background:var(--success-soft);color:var(--success)">soft</div></div>
+ <div class="chip"><div class="top" style="background:var(--warning)">Cảnh báo</div><div class="bot" style="background:var(--warning-soft);color:var(--warning)">soft</div></div>
+ <div class="chip"><div class="top" style="background:var(--error)">Lỗi</div><div class="bot" style="background:var(--error-soft);color:var(--error)">soft</div></div>
+ <div class="chip"><div class="top" style="background:var(--info)">Thông tin</div><div class="bot" style="background:var(--purple-50);color:var(--info)">info</div></div>
+</div>
+</body></html>

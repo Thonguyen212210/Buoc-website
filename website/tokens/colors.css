@@ -1,0 +1,84 @@
+/* ============================================================
+   Bước — Color tokens
+   Brand DNA: deep royal violet + butter-cream gold — a dreamy
+   cosmic palette sampled from the logo & starry-night key art.
+   ============================================================ */
+
+:root {
+  /* ---- Brand purple scale (logo core = --purple-700 #603078) ---- */
+  --purple-950: #2A0F3D;   /* deepest cosmic night */
+  --purple-900: #3D1A52;
+  --purple-800: #4A2168;
+  --purple-700: #603078;   /* ◀ PRIMARY brand purple (logo) */
+  --purple-600: #734191;
+  --purple-500: #8B57A8;
+  --purple-400: #A87CC0;
+  --purple-300: #C4A3D6;
+  --purple-200: #DEC9EB;
+  --purple-100: #EEE2F5;
+  --purple-50:  #F8F2FB;
+
+  /* ---- Butter / cream gold accent (logo ribbon = --cream-300) ---- */
+  --cream-700: #C9A24B;    /* deep gold — text/icon on cream */
+  --cream-600: #E3BE63;
+  --cream-500: #F2D588;
+  --cream-400: #FCE6A0;
+  --cream-300: #FFF0A8;    /* ◀ core butter cream (hero CTA) */
+  --cream-200: #FFF6CC;
+  --cream-100: #FFFBEC;
+
+  /* ---- Warm paper surfaces (never stark white) ---- */
+  --paper-100: #FFFDF8;
+  --paper-200: #FBF4E8;
+  --paper-300: #F3E8D6;
+
+  /* ---- Plum-ink neutrals (warm-tinted, never pure gray/black) ---- */
+  --ink-900: #2A1B33;      /* primary text */
+  --ink-700: #4A3A55;
+  --ink-500: #6E5E78;
+  --ink-300: #A99CB0;
+  --ink-100: #E7E0EC;
+
+  /* ---- Semantic status ---- */
+  --success: #3F9D6B;
+  --success-soft: #E3F4EA;
+  --warning: #E0922F;
+  --warning-soft: #FBEEDA;
+  --error: #D1495B;
+  --error-soft: #FBE6E9;
+  --info: #6E8FD1;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in product code
+     ============================================================ */
+  --color-primary:       var(--purple-700);
+  --color-primary-hover: var(--purple-800);
+  --color-primary-press: var(--purple-900);
+  --color-primary-soft:  var(--purple-100);
+  --color-on-primary:    var(--cream-100);
+  --color-accent:        var(--cream-300);
+  --color-accent-strong: var(--cream-600);
+  --color-on-accent:     var(--purple-800);
+
+  --text-strong:         var(--ink-900);
+  --text-body:           var(--ink-700);
+  --text-muted:          var(--ink-500);
+  --text-faint:          var(--ink-300);
+  --text-on-dark:        var(--cream-100);
+  --text-on-dark-muted:  var(--purple-200);
+
+  --surface-page:        var(--paper-200);
+  --surface-card:        var(--paper-100);
+  --surface-sunk:        var(--paper-300);
+  --surface-dark:        var(--purple-800);
+  --surface-dark-deep:   var(--purple-950);
+
+  --border-subtle:       var(--ink-100);
+  --border-strong:       var(--purple-200);
+  --border-on-dark:      rgba(255, 240, 168, 0.22);
+
+  /* ---- Signature gradients (deliberate, never decorative SaaS) ---- */
+  --gradient-night: radial-gradient(120% 130% at 70% 0%, #7B4B91 0%, #603078 38%, #3D1A52 100%); /* @kind color */
+  --gradient-dawn:  linear-gradient(180deg, #603078 0%, #8B57A8 55%, #F3E2C4 100%); /* @kind color */
+  --gradient-gold:  linear-gradient(100deg, #FFF0A8 0%, #F2D588 100%); /* @kind color */
+}

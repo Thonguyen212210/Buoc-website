@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  buoc-app:
+    build: .
+    container_name: buoc_app
+    ports:
+      - "127.0.0.1:3001:3000"
+    volumes:
+      - buoc_data:/app/server/data
+      - ./server/.env:/app/server/.env
+    restart: unless-stopped
+
+volumes:
+  buoc_data:
